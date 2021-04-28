@@ -8,6 +8,9 @@ export default function Summary(props) {
 
   return (
     <div>
+      <header className="app-header">
+        <h2 className="bold">PawlLifts</h2>
+      </header>
       {upcomingWorkouts.map((workout) => {
         const {
           date,

@@ -1,7 +1,10 @@
 import moment from 'moment';
+import React from 'react';
 
 import './App.css';
+
 import Summary from './components/Summary';
+import Workout from './components/Workout';
 
 const dummyWorkoutData = [
   {
@@ -43,22 +46,38 @@ const dummyWorkoutData = [
   },
 ];
 
-function startWorkout() {
-  console.log('start workout');
-}
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      view: 'summary',
+    };
+    this.startWorkout = this.startWorkout.bind(this);
+  }
 
-function App() {
-  return (
-    <div className="app">
-      <header className="app-header">
-        <h2 className="bold">PawlLifts</h2>
-      </header>
-      <Summary
-        upcomingWorkouts={dummyWorkoutData}
-        startWorkout={startWorkout}
-      />
-    </div>
-  );
+  startWorkout() {
+    this.setState({
+      view: 'workout',
+    });
+  }
+
+  render() {
+    return (
+      <div className="app">
+        {this.state.view === 'summary' ?
+          <Summary
+            upcomingWorkouts={dummyWorkoutData}
+            startWorkout={this.startWorkout}
+          /> : ''
+        }
+        {this.state.view === 'workout' ?
+          <Workout
+            workouts={dummyWorkoutData}
+          /> : ''
+        }
+      </div>
+    );
+  }
 }
 
 export default App;
