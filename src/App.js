@@ -43,20 +43,26 @@ const dummyWorkoutSummaryData = [
   },
 ];
 
+function startWorkout() {
+  console.log('thing');
+}
+
 function App() {
   return (
     <div className="app">
       <header className="app-header">
-          <h2 className="bold">PawlLifts</h2>
+        <h2 className="bold">PawlLifts</h2>
       </header>
         { dummyWorkoutSummaryData.map((workoutSummary) => {
           return <WorkoutSummary
+            key={workoutSummary.name}
             date={workoutSummary.dateOfNextExercise}
             name={workoutSummary.name}
             exercises={workoutSummary.exercises}
             selected={workoutSummary.selected}
           />
         })}
+        <button className="button" onClick={startWorkout}>Start Workout</button>
     </div>
   );
 }

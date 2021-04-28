@@ -33,3 +33,19 @@ body {
   border: 2px solid;
   border-color: darkred;
 }
+
+.button {
+  background-color: darkred;
+  width: 94.5%;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  font-size: 14px;
+  font-weight: 900;
+  border: 2px solid;
+  border-color: darkred;
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  margin-right: 10px;
+}
