@@ -1,16 +1,14 @@
 import React from 'react';
 
 export default function Workout(props) {
-  const { workouts } = props;
+  const { workout } = props;
 
   return (
     <div>
       <header className="app-header">
-        <select className="workout-dropdown" name="workouts" id="workouts">
-          {workouts.map(workout => <option key={workout.name} value={workout.name}>{workout.name}</option>)}
-        </select>
+        <h2 className="bold">PawlLifts</h2>
       </header>
-      {JSON.stringify(workouts)}
+      {JSON.stringify(workout)}
     </div>
   );
 }

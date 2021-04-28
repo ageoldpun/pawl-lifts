@@ -72,7 +72,7 @@ class App extends React.Component {
         }
         {this.state.view === 'workout' ?
           <Workout
-            workouts={dummyWorkoutData}
+            workout={dummyWorkoutData[0]}
           /> : ''
         }
       </div>
