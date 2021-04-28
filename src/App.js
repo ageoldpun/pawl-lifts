@@ -1,23 +1,55 @@
-import logo from './logo.svg';
 import './App.css';
+import WorkoutSummary from './components/WorkoutSummary';
+
+const dummyWorkoutSummaryData = [
+  {
+    name: 'Workout A',
+    exercises: [
+      {
+        name: 'Squat',
+        weight: 55,
+      },
+      {
+        name: 'Bench',
+        weight: 45,
+      },
+      {
+        name: 'Barbell Row',
+        weight: 70,
+      },
+    ],
+  },
+  {
+    name: 'Workout B',
+    exercises: [
+      {
+        name: 'Squat',
+        weight: 55,
+      },
+      {
+        name: 'Overhead Press',
+        weight: 45,
+      },
+      {
+        name: 'Deadlift',
+        weight: 70,
+      },
+    ]
+  },
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="app">
+      <header className="app-header">
+          <h2 className="bold">PawlLifts</h2>
       </header>
+        { dummyWorkoutSummaryData.map((workoutSummary) => {
+          return <WorkoutSummary
+            name={workoutSummary.name}
+            exercises={workoutSummary.exercises}
+          />
+        })}
     </div>
   );
 }
