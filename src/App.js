@@ -1,9 +1,12 @@
+import moment from 'moment';
+
 import './App.css';
 import WorkoutSummary from './components/WorkoutSummary';
 
 const dummyWorkoutSummaryData = [
   {
     name: 'Workout A',
+    dateOfNextExercise: moment().format("MMM Do"),
     exercises: [
       {
         name: 'Squat',
@@ -18,9 +21,11 @@ const dummyWorkoutSummaryData = [
         weight: 70,
       },
     ],
+    selected: true,
   },
   {
     name: 'Workout B',
+    dateOfNextExercise: moment().add(2, 'days').format("MMM Do"),
     exercises: [
       {
         name: 'Squat',
@@ -46,8 +51,10 @@ function App() {
       </header>
         { dummyWorkoutSummaryData.map((workoutSummary) => {
           return <WorkoutSummary
+            date={workoutSummary.dateOfNextExercise}
             name={workoutSummary.name}
             exercises={workoutSummary.exercises}
+            selected={workoutSummary.selected}
           />
         })}
     </div>

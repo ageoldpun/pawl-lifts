@@ -28,3 +28,8 @@ body {
   padding: 10px;
   margin-bottom: 20px;
 }
+
+.workout-summary.selected {
+  border: 2px solid;
+  border-color: darkred;
+}

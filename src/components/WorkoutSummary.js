@@ -1,14 +1,15 @@
 import React from 'react';
-import moment from 'moment';
 
 export default function WorkoutSummary(props) {
   const { 
+    date,
     name,
-    exercises
+    exercises,
+    selected,
   } = props;
-  const date = moment().format("MMM Do");
+  ;
   return (
-    <div className="workout-summary">
+    <div className={`workout-summary ${selected ? 'selected' : ''}`}>
       <table style={{width: '100%'}}>
         <tr>
           <th style={{textAlign: 'left'}}>{name}</th>
@@ -18,7 +19,7 @@ export default function WorkoutSummary(props) {
           return (
             <tr>
               <td style={{textAlign: 'left'}}>{exercise.name}</td>
-              <td style={{textAlign: 'right'}}>{exercise.weight}lbs</td>
+              <td style={{textAlign: 'right'}}>5 x {exercise.weight}lbs</td>
             </tr>
           )
         })}
