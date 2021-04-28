@@ -68,12 +68,11 @@ class App extends React.Component {
           <Summary
             upcomingWorkouts={dummyWorkoutData}
             startWorkout={this.startWorkout}
-          /> : ''
-        }
-        {this.state.view === 'workout' ?
+          />
+          :
           <Workout
             workout={dummyWorkoutData[0]}
-          /> : ''
+          />
         }
       </div>
     );
