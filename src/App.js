@@ -1,12 +1,12 @@
 import moment from 'moment';
 
 import './App.css';
-import WorkoutSummary from './components/WorkoutSummary';
+import Summary from './components/Summary';
 
-const dummyWorkoutSummaryData = [
+const dummyWorkoutData = [
   {
     name: 'Workout A',
-    dateOfNextExercise: moment().format("ddd, MMM Do"),
+    date: moment().format("ddd, MMM Do"),
     exercises: [
       {
         name: 'Squat',
@@ -25,7 +25,7 @@ const dummyWorkoutSummaryData = [
   },
   {
     name: 'Workout B',
-    dateOfNextExercise: moment().add(2, 'days').format("ddd, MMM Do"),
+    date: moment().add(2, 'days').format("ddd, MMM Do"),
     exercises: [
       {
         name: 'Squat',
@@ -53,16 +53,10 @@ function App() {
       <header className="app-header">
         <h2 className="bold">PawlLifts</h2>
       </header>
-        { dummyWorkoutSummaryData.map((workoutSummary) => {
-          return <WorkoutSummary
-            key={workoutSummary.name}
-            date={workoutSummary.dateOfNextExercise}
-            exercises={workoutSummary.exercises}
-            name={workoutSummary.name}
-            selected={workoutSummary.selected}
-          />
-        })}
-        <button className="button" onClick={startWorkout}>Start Workout</button>
+      <Summary
+        upcomingWorkouts={dummyWorkoutData}
+        startWorkout={startWorkout}
+      />
     </div>
   );
 }

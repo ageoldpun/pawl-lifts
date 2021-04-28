@@ -22,14 +22,14 @@ body {
   font-weight: 900;
 }
 
-.workout-summary {
+.workout {
   background-color: rgb(31, 26, 26);
   border-radius: 10px;
   padding: 10px;
   margin-bottom: 20px;
 }
 
-.workout-summary.selected {
+.workout.selected {
   border: 2px solid;
   border-color: darkred;
 }
