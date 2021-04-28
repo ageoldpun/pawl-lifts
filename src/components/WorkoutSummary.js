@@ -3,11 +3,11 @@ import React from 'react';
 export default function WorkoutSummary(props) {
   const { 
     date,
-    name,
     exercises,
+    name,
     selected,
   } = props;
-  ;
+
   return (
     <div className={`workout-summary ${selected ? 'selected' : ''}`}>
       <table style={{width: '100%'}}>
@@ -30,4 +30,4 @@ export default function WorkoutSummary(props) {
       </table>
     </div>
   )
-}
+};

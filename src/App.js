@@ -6,7 +6,7 @@ import WorkoutSummary from './components/WorkoutSummary';
 const dummyWorkoutSummaryData = [
   {
     name: 'Workout A',
-    dateOfNextExercise: moment().format("MMM Do"),
+    dateOfNextExercise: moment().format("ddd, MMM Do"),
     exercises: [
       {
         name: 'Squat',
@@ -25,7 +25,7 @@ const dummyWorkoutSummaryData = [
   },
   {
     name: 'Workout B',
-    dateOfNextExercise: moment().add(2, 'days').format("MMM Do"),
+    dateOfNextExercise: moment().add(2, 'days').format("ddd, MMM Do"),
     exercises: [
       {
         name: 'Squat',
@@ -44,7 +44,7 @@ const dummyWorkoutSummaryData = [
 ];
 
 function startWorkout() {
-  console.log('thing');
+  console.log('start workout');
 }
 
 function App() {
@@ -57,8 +57,8 @@ function App() {
           return <WorkoutSummary
             key={workoutSummary.name}
             date={workoutSummary.dateOfNextExercise}
-            name={workoutSummary.name}
             exercises={workoutSummary.exercises}
+            name={workoutSummary.name}
             selected={workoutSummary.selected}
           />
         })}
